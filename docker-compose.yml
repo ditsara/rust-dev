@@ -1,0 +1,13 @@
+version: '3'
+services:
+  dev:
+    image: ditsara/rust-dev:latest
+    build:
+      context: .
+    volumes:
+     - .:/app:cached
+     - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - USER=${USER}
+    working_dir: /app
+    command: bash
